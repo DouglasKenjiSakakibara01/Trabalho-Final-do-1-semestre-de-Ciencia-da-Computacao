@@ -4,7 +4,7 @@
 #include<locale.h>
 #include<stddef.h>
 
-int escolha,cont,cont2=0,pos,atualizacao,registroacad;
+int escolha,cont=0,cont2=0,pos,atualizacao,registroacad;
 char cid[25],novocurso[25];
 FILE *file;
 
@@ -22,6 +22,7 @@ void arquivo(struct registro *n){
     file=fopen("arquivotrabalho.txt","rb+");
     while(!feof(file)){
         fread(&n[cont],sizeof(struct registro),1,file);
+        cont++;
         cont2++;
     }
     cont2--;
